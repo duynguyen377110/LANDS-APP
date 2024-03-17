@@ -6,10 +6,22 @@ import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
 
 const ScreenSignin = (props) => {
-    const { value: emailVal, enterVal: emailEnterVal, resetVal: emailResetVal } = useValdator();
-    const { value: passVal, enterVal: passEnterVal, resetVal: passResetVal } = useValdator();
+    const {
+        value: emailVal, valid: emailValid,
+        verifyElm: veryfiEmail,
+        enterVal: emailEnterVal, resetVal: emailResetVal
+    } = useValdator();
+
+    const {
+        value: passVal, valid: passValid,
+        verifyElm: veryfiPass,
+        enterVal: passEnterVal, resetVal: passResetVal
+    } = useValdator();
 
     const onSignInHandler = (e) => {
+        veryfiEmail(emailVal, ['require', 'email']);
+        veryfiPass(passVal, ['require', 'password']);
+
         if(emailVal && passVal) {
             emailResetVal();
             passResetVal();
@@ -26,12 +38,14 @@ const ScreenSignin = (props) => {
                 <CommonInput
                     label='E-mail'
                     value={emailVal}
+                    valid={emailValid}
                     change={emailEnterVal}/>
 
                 <CommonInput
                     label='Mật khẩu'
                     type='password'
                     value={passVal}
+                    valid={passValid}
                     change={passEnterVal}/>
 
                 <CommonButton
