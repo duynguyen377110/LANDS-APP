@@ -14,6 +14,7 @@ const CommonInput = (props) => {
         <TextInput
             style={[styles.input]}
             onChangeText={onBlurHandler}
+            value={props.value}
             secureTextEntry={props.type === 'password'? true : false}/>
     </View>
     )

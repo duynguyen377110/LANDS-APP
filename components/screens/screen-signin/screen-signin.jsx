@@ -1,7 +1,8 @@
-import { View, Button } from "react-native";
+import { View, KeyboardAvoidingView, Platform } from "react-native";
 import useValdator from "../../../hook/use-validator";
 
 import CommonInput from "../../common/common-input/common-input";
+import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
 
 const ScreenSignin = (props) => {
@@ -10,25 +11,34 @@ const ScreenSignin = (props) => {
 
     const onSignInHandler = (e) => {
         if(emailVal && passVal) {
+            emailResetVal();
+            passResetVal();
             props.navigation.navigate('dashboard');
         }
     }
 
     return (
-        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}>
+        <KeyboardAvoidingView
+            behavior="padding"
+            keyboardVerticalOffset={Platform.OS === 'ios'? 100 : 0}
+            style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}>
             <View style={[commonStyles.form.wrapper]}>
                 <CommonInput
                     label='E-mail'
+                    value={emailVal}
                     change={emailEnterVal}/>
 
                 <CommonInput
-                    label='Password'
+                    label='Mật khẩu'
                     type='password'
+                    value={passVal}
                     change={passEnterVal}/>
 
-                <Button title="SignIn" onPress={onSignInHandler} />
+                <CommonButton
+                title="Đăng nhập"
+                click={onSignInHandler}/>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 
