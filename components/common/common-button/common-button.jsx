@@ -6,7 +6,10 @@ const CommonButton = (props) => {
     return (
         <TouchableOpacity
             onPress={props.click}
-            style={[commonStyles.button.normal]}>
+            style={[
+                commonStyles.button.normal,
+                props.width === 'full'? commonStyles.button.full : {}
+            ]}>
             <Text style={[commonStyles.button.title]}>{props.title}</Text>
         </TouchableOpacity>
     )
