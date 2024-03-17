@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     },
     inputComponent: {
         marginBottom: 10,
+        width: '100%',
     },
     input: {
         borderWidth: 1,
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
         borderColor: 'red'
     },
     messageInvalid: {
-        color: 'red'
+        color: commonStyles.common.colorError
     }
 })
 

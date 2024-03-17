@@ -1,17 +1,47 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = {
-    colorFirst: '#25adde',
+    colorFirst: '#c9e181',
+    colorTwo: '#decf49',
+    colorText: '#4b4b4b',
+    colorError: '#f15454',
     bgForm: '#e9e9e9',
-    borderInput: '#ced4da'
+    borderInput: '#ced4da',
 }
 
 const form = StyleSheet.create({
+    fromContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent:'center',
+        padding: 20,
+    },
     wrapper: {
+        flex: 1,
+        alignItems: 'center',
         backgroundColor: styles.bgForm,
         borderRadius: 5,
         padding: 15,
         width:'85%'
+    },
+    formIcon: {
+        borderRadius: 50,
+        height: 90,
+        width: 90,
+    },
+    fromSugget: {
+        flexDirection: 'row',
+        gap: 5,
+        marginTop: 15,
+    },
+    formSuggetDes: {
+        color: styles.colorText,
+        fontSize: 16,
+    },
+    formSuggetLink: {
+        color: styles.colorTwo,
+        fontSize: 16,
     }
 })
 
@@ -20,6 +50,9 @@ const button = StyleSheet.create({
         backgroundColor: styles.colorFirst,
         borderRadius: 5,
         padding: 10,
+    },
+    full: {
+        width: '100%',
     },
     title: {
         color:'#ffffff',

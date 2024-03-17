@@ -1,9 +1,11 @@
-import { View, KeyboardAvoidingView, Platform } from "react-native";
+import { Image, View, Text, KeyboardAvoidingView, Platform } from "react-native";
 import useValdator from "../../../hook/use-validator";
 
 import CommonInput from "../../common/common-input/common-input";
 import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
+
+const icon = require("../../../assets/ic_launcher_foreground.png");
 
 const ScreenSignin = (props) => {
     const {
@@ -33,8 +35,12 @@ const ScreenSignin = (props) => {
         <KeyboardAvoidingView
             behavior="padding"
             keyboardVerticalOffset={Platform.OS === 'ios'? 100 : 0}
-            style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}>
+            style={[commonStyles.form.fromContainer]}>
             <View style={[commonStyles.form.wrapper]}>
+                <Image
+                    style={[commonStyles.form.formIcon]}
+                    source={icon} />
+
                 <CommonInput
                     label='E-mail'
                     value={emailVal}
@@ -50,7 +56,13 @@ const ScreenSignin = (props) => {
 
                 <CommonButton
                 title="Đăng nhập"
+                width="full"
                 click={onSignInHandler}/>
+
+                <View style={[commonStyles.form.fromSugget]}>
+                    <Text style={[commonStyles.form.formSuggetDes]}>Bạn chưa có tài khoản?</Text>
+                    <Text style={[commonStyles.form.formSuggetLink]}>Đăng ký</Text>
+                </View>
             </View>
         </KeyboardAvoidingView>
     )
