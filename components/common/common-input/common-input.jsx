@@ -4,7 +4,7 @@ import styles from "./common-input.style";
 
 const CommonInput = (props) => {
 
-    const onBlurHandler = (e) => {
+    const onChangeHandler = (e) => {
         props.change(e);
     }
 
@@ -12,10 +12,17 @@ const CommonInput = (props) => {
     <View style={[styles.inputComponent]}>
         <Text style={[styles.label]}>{props.label}</Text>
         <TextInput
-            style={[styles.input]}
-            onChangeText={onBlurHandler}
+            style={[
+                styles.input,
+                (props?.valid?.status !== null && !props?.valid?.status)? styles.inputInvalid : {}
+            ]}
+            onChangeText={onChangeHandler}
             value={props.value}
             secureTextEntry={props.type === 'password'? true : false}/>
+
+        {(props.valid?.message.length > 0) && (
+            <Text style={[styles.messageInvalid]}>{props.valid.message}</Text>
+        )}
     </View>
     )
 }

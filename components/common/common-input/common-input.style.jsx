@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
         marginVertical: 5,
         padding: 5,
         width: '100%'
+    },
+    inputInvalid: {
+        borderColor: 'red'
+    },
+    messageInvalid: {
+        color: 'red'
     }
 })
 
