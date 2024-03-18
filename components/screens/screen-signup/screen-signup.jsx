@@ -1,13 +1,13 @@
-import { Image, View, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { KeyboardAvoidingView, View, Text, Image, Platform } from "react-native";
 import useValdator from "../../../hook/use-validator";
-
 import CommonInput from "../../common/common-input/common-input";
 import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
 
 const icon = require("../../../assets/ic_launcher_foreground.png");
 
-const ScreenSignin = (props) => {
+const ScreenSignup = (props) => {
+
     const {
         value: emailVal, valid: emailValid,
         verifyElm: veryfiEmail,
@@ -20,21 +20,34 @@ const ScreenSignin = (props) => {
         enterVal: passEnterVal, resetVal: passResetVal
     } = useValdator(['require', 'password']);
 
+    const {
+        value: phoneVal, valid: phoneValid,
+        verifyElm: veryfiPhone,
+        enterVal: phoneEnterVal, resetVal: phoneResetVal
+    } = useValdator(['require', 'phone']);
+
+    const {
+        value: addressVal, valid: addressValid,
+        verifyElm: veryfiAddress,
+        enterVal: addressEnterVal, resetVal: addressResetVal
+    } = useValdator(['require']);
+
     const onSignInHandler = (e) => {
         veryfiEmail(emailVal);
         veryfiPass(passVal);
+        veryfiPhone(phoneVal);
+        veryfiAddress(addressVal);
 
-        console.log(emailValid);
-
-        if(!emailValid.status && !passValid.status) return;
-
+        if((!emailValid.status && !passValid.status) && (!phoneValid.status && !addressValid.status)) return;
         emailResetVal();
         passResetVal();
-        props.navigation.navigate('dashboard');
+        phoneResetVal();
+        addressResetVal();
+        props.navigation.navigate('signin');
     }
 
     const onNavigaterHandler = (e) => {
-        props.navigation.navigate('signup');
+        props.navigation.navigate('signin');
     }
 
     return (
@@ -60,20 +73,34 @@ const ScreenSignin = (props) => {
                     valid={passValid}
                     change={passEnterVal}/>
 
+                <CommonInput
+                    label='Số điện thoại'
+                    type='phone'
+                    value={phoneVal}
+                    valid={phoneValid}
+                    change={phoneEnterVal}/>
+
+                <CommonInput
+                    label='Địa chỉ'
+                    type='address'
+                    value={addressVal}
+                    valid={addressValid}
+                    change={addressEnterVal}/>
+
                 <CommonButton
-                title="Đăng nhập"
+                title="Đăng ký"
                 width="full"
                 click={onSignInHandler}/>
 
                 <View style={[commonStyles.form.fromSugget]}>
-                    <Text style={[commonStyles.form.formSuggetDes]}>Bạn chưa có tài khoản?</Text>
+                    <Text style={[commonStyles.form.formSuggetDes]}>Bạn đã có tài khoản?</Text>
                     <Text
                         onPress={onNavigaterHandler}
-                        style={[commonStyles.form.formSuggetLink]}>Đăng ký</Text>
+                        style={[commonStyles.form.formSuggetLink]}>Đăng nhập</Text>
                 </View>
             </View>
         </KeyboardAvoidingView>
     )
 }
 
-export default ScreenSignin;
+export default ScreenSignup;

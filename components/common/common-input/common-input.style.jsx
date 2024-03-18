@@ -3,8 +3,8 @@ import { commonStyles } from "../../../styles";
 
 const styles = StyleSheet.create({
     label: {
-        fontWeight: '500',
-        fontSize: 17,
+        fontWeight: '400',
+        fontSize: 14,
         textTransform: 'capitalize'
     },
     inputComponent: {
