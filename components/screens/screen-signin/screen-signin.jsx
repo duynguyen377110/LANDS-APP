@@ -1,6 +1,8 @@
 import { Image, View, Text, KeyboardAvoidingView, Platform } from "react-native";
 import useValdator from "../../../hook/use-validator";
+import useHttp from "../../../hook/use-http";
 
+import environment from "../../../environment";
 import CommonInput from "../../common/common-input/common-input";
 import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
@@ -8,6 +10,8 @@ import { commonStyles } from "../../../styles";
 const icon = require("../../../assets/ic_launcher_foreground.png");
 
 const ScreenSignin = (props) => {
+    const path = `${environment.api.url}${environment.api.auth.signup}`;
+
     const {
         value: emailVal, valid: emailValid,
         verifyElm: veryfiEmail,
@@ -20,17 +24,26 @@ const ScreenSignin = (props) => {
         enterVal: passEnterVal, resetVal: passResetVal
     } = useValdator(['require', 'password']);
 
-    const onSignInHandler = (e) => {
+    const { http } = useHttp(path);
+
+    const onSignInHandler = async (e) => {
+        
         veryfiEmail(emailVal);
         veryfiPass(passVal);
 
-        console.log(emailValid);
-
         if(!emailValid.status && !passValid.status) return;
 
-        emailResetVal();
-        passResetVal();
-        props.navigation.navigate('dashboard');
+        let payload = {
+            email: emailVal,
+            password: passVal
+        }
+        http('POST', payload, (res) => {
+            console.log(res);
+            emailResetVal();
+            passResetVal();
+            props.navigation.navigate('dashboard');
+        })
+
     }
 
     const onNavigaterHandler = (e) => {
