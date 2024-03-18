@@ -7,7 +7,6 @@ const valid = (key, value) => {
     
     if(key === 'require') {
         if(!(value.trim() === 'DEFAULT') && value.trim().length) {
-
             return {
                 status: true,
                 message: ''
@@ -88,12 +87,12 @@ const validReducer = (state, action) => {
     return state;
 }
 
-const useValdator = () => {
+const useValdator = (condition = []) => {
     const [valid, dispatchValid] = useReducer(validReducer, {status: null, message: ''});
     const [value, setValue] = useState('');
 
-    const verifyElm = (val, options = []) => {
-        dispatchValid({type: 'VALID', options, value: val? 'has file' : ''});
+    const verifyElm = (val) => {
+        dispatchValid({type: 'VALID', options: condition, value: val});
     }
 
     const enterVal = (val) => {
