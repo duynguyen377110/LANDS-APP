@@ -5,6 +5,7 @@ const styles = {
     colorTwo: '#decf49',
     colorText: '#4b4b4b',
     colorError: '#f15454',
+    colorOpacity: '#ededed70',
     bgForm: '#e9e9e9',
     borderInput: '#ced4da',
 }
@@ -62,4 +63,19 @@ const button = StyleSheet.create({
     }
 })
 
-export const commonStyles = { button, common: styles, form };
+const loader = StyleSheet.create({
+    loader: {
+        backgroundColor: styles.colorOpacity,
+        display: 'none',
+        flex: 1,
+        height: '100%',
+        position: 'absolute',
+        zIndex: 1,
+        width: '100%'
+    },
+    loaderActive: {
+        display: 'flex'
+    }
+})
+
+export const commonStyles = { button, common: styles, form, loader };

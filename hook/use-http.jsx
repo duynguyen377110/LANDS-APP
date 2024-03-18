@@ -1,7 +1,13 @@
+import { useDispatch } from "react-redux";
+import { open, close } from "../store/store-loader";
 const useHttp = (url = '') => {
+
+    const dispatch = useDispatch();
+
 
     const http = async (method ='', payload = null, cb) => {
         try {
+            dispatch(open());
             let res = await fetch(url, {
                 method: method? method : 'GET',
                 headers: {
@@ -16,6 +22,7 @@ const useHttp = (url = '') => {
         } catch (err) {
             console.log(err);
         }
+        dispatch(close());
     }
 
     return {
