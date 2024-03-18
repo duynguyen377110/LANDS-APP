@@ -1,4 +1,5 @@
 import { Image, View, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { useSelector } from "react-redux";
 import useValdator from "../../../hook/use-validator";
 import useHttp from "../../../hook/use-http";
 
@@ -11,6 +12,7 @@ const icon = require("../../../assets/ic_launcher_foreground.png");
 
 const ScreenSignin = (props) => {
     const path = `${environment.api.url}${environment.api.auth.signup}`;
+    const loader = useSelector((state) => state.loader);
 
     const {
         value: emailVal, valid: emailValid,
