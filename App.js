@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { ActivityIndicator } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { Provider } from 'react-redux';
-import { useSelector } from 'react-redux';
 import store from './store';
-import { commonStyles } from "./styles";
 
 import Router from "./router/router";
+
+library.add(fas);
 
 export default function App() {
 

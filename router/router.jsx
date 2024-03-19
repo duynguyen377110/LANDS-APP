@@ -27,7 +27,7 @@ const Router = (props) => {
                     component={ScreenSignup} />
 
                 <Stack.Screen
-                    options={{title: 'Dashboard'}}
+                    options={{headerShown: false}}
                     name="dashboard"
                     component={ScreenDashboard}/>
             </Stack.Navigator>
