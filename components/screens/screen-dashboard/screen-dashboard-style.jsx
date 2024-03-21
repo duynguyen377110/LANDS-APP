@@ -6,14 +6,22 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         flex: 1,
         flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 15,
+        height: '100%',
+        paddingHorizontal: 15,
+        paddingVertical: 35,
+        width: '100%',
     },
-    dashboardTab: {
-        backgroundColor: commonStyles.common.colorTwo,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignSelf: 'flex-end',
-        padding: 15,
-        width: '100%'
+    dashboardCard: {
+        backgroundColor: 'red',
+        borderRadius: 5,
+        overflow: 'hidden',
+        width: '45%'
+    },
+    dashboardCardImage: {
+        height: 130,
+        width: '100%',
     }
 })
 
