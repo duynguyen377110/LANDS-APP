@@ -15,9 +15,12 @@ const environment = {
             url: 'https://lands-be.onrender.com/api/v1/',
             auth: {
                 signup: 'common-access/signup'
+            },
+            category: {
+                all: 'mobile/category'
             }
         }
     }
 }
 
-export default environment['dev'];
+export default environment['pro'];
