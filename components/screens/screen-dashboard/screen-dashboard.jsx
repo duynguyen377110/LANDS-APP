@@ -1,35 +1,56 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { View, Image } from "react-native";
+
+import environment from "../../../environment";
 import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
 import styles from "./screen-dashboard.style";
 
 const ScreenDashboard = (props) => {
-    const [list, setList] = useState([
-        {
-            title: 'Nhà đất',
-            thumb: "https://res.cloudinary.com/ditc3z3gj/image/upload/w_200,h_200,c_scale/v1711017633/lands/dashboard/pexels-oesch-jonathan-10420282_fhhpzh.jpg",
-        },
-        {
-            title: 'Căn hộ',
-            thumb: "https://res.cloudinary.com/ditc3z3gj/image/upload/w_200,h_200,c_scale/v1711017633/lands/dashboard/pexels-oesch-jonathan-10420282_fhhpzh.jpg",
-        },
-        {
-            title: 'Mặt bằng',
-            thumb: "https://res.cloudinary.com/ditc3z3gj/image/upload/w_200,h_200,c_scale/v1711017633/lands/dashboard/pexels-oesch-jonathan-10420282_fhhpzh.jpg",
-        },
-        {
-            title: 'Phòng trọ',
-            thumb: "https://res.cloudinary.com/ditc3z3gj/image/upload/w_200,h_200,c_scale/v1711017633/lands/dashboard/pexels-oesch-jonathan-10420282_fhhpzh.jpg",
-        },
-    ])
+    
+    const url = `${environment.api.url}${environment.api.category.all}`;
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        const calllApi = async () => {
+            try {
+                let res = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+
+                if(!res.ok) throw new Error('Call api unsuccess');
+
+                let { status, categories} = await res.json();
+                if(status) {
+                    categories = categories.map((elm) => {
+                        elm.thumbs = elm.thumbs.map((thumb) => {
+                            thumb = thumb.replace('upload', 'upload/w_200,h_200,c_scale');
+                            return thumb;
+                        })
+                        return elm
+                    })
+                    setCategories(categories);
+                }
+
+            } catch (err) {
+                console.log(err);
+
+            }
+        }
+
+        calllApi();
+
+    }, [])
 
     return (
         <View style={[styles.screenDashboardContainer]}>
-            {list.length > 0 && list.map((elm, index) => {
+            {categories.length > 0 && categories.map((elm) => {
                 return (
                     <CommonCardDashboard
                         title={elm.title}
-                        thumb={elm.thumb}/>
+                        thumb={elm.thumbs[0]}/>
                 )
             })}
         </View>
