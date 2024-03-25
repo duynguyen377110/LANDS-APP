@@ -1,6 +1,4 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import styles from "./common-banner-style";
 
 const CommonBanner = (props) => {
@@ -13,11 +11,7 @@ const CommonBanner = (props) => {
             <View style={[styles.bannerMask]}>
                 <View style={[styles.bannerMaskWrapper]}>
                     <Text style={[styles.bannerTitle]}>Chính sách khách hàng</Text>
-                    <TouchableOpacity style={[styles.bannerBtn]}>
-                        <FontAwesomeIcon
-                            icon={faArrowRightLong}
-                            style={[styles.bannerBtnIcon]} size={20} />
-                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.bannerBtn]}></TouchableOpacity>
                 </View>
             </View>
         </View>
