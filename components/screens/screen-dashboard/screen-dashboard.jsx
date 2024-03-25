@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { View, Image } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 
 import environment from "../../../environment";
+import CommonBanner from "../../common/common-banner/common-banner";
 import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
 import styles from "./screen-dashboard.style";
 
@@ -45,15 +46,22 @@ const ScreenDashboard = (props) => {
     }, [])
 
     return (
-        <View style={[styles.screenDashboardContainer]}>
-            {categories.length > 0 && categories.map((elm) => {
-                return (
-                    <CommonCardDashboard
-                        title={elm.title}
-                        thumb={elm.thumbs[0]}/>
-                )
-            })}
-        </View>
+        <ScrollView>
+            <View style={[styles.screenDashboardComponent]}>
+
+                <CommonBanner />
+                <View style={[styles.screenDashboardContainer]}>
+                    {categories.length > 0 && categories.map((elm) => {
+                        return (
+                            <CommonCardDashboard
+                                key={elm._id}
+                                title={elm.title}
+                                thumb={elm.thumbs[0]}/>
+                        )
+                    })}
+                </View>
+            </View>
+        </ScrollView>
     )
 }
 

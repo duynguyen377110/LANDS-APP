@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 import { commonStyles } from "../../../styles";
 
 const styles = StyleSheet.create({
+    screenDashboardComponent: {
+        paddingHorizontal: 15,
+        paddingVertical: 25,
+    },
     screenDashboardContainer: {
         backgroundColor: 'transparent',
         flex: 1,

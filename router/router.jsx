@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import ScreenSignin from "../components/screens/screen-signin/screen-signin";
 import ScreenSignup from "../components/screens/screen-signup/screen-signup";
 import ScreenDashboard from "../components/screens/screen-dashboard/screen-dashboard";
-import ScreenDashboardMain from "../components/screens/screen-dashboard/screen-dashboard-main/screen-dashboard-main";
 import { commonStyles } from '../styles';
 
 const Stack = createNativeStackNavigator();
