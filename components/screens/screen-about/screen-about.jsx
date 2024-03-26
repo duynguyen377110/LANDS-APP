@@ -7,14 +7,11 @@ const banner = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711420399/la
 
 const ScreenAbout = (props) => {
 
-
-    const onBackScreenHandler = (event) => {
-        props.navigation.goBack();
-    }
-
     return (
         <ScrollView style={{backgroundColor: '#ffffff'}}>
-            <CommonHeader backButtonShow={true} onBackScreen={onBackScreenHandler} />
+            <CommonHeader
+                backButtonShow={true}
+                navigation={props.navigation}/>
 
             <View style={[styles.screenAboutComponent]}>
                 <View style={[styles.aboutPoster]}>

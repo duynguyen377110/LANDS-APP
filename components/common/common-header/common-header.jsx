@@ -1,23 +1,36 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import styles from "./common-header-style";
 
-const icons = require("../../../assets/icons/back-svgrepo-com.png");
+const iconBack = require("../../../assets/icons/back-svgrepo-com.png");
+const iconUser = require("../../../assets/icons/user-profile-svgrepo-com.png");
 
 const CommonHeader = (props) => {
 
-    const onBackHandler = (event) => {
-        props.onBackScreen();
+    const onBackOldScreenHandler = (event) => {
+        props.navigation.goBack();
+    }
+
+    const onToScreenInfor = (event) => {
+        props.navigation.navigate('information');
     }
 
     return (
         <View style={[styles.commonHeaderComponent]}>
             {props.backButtonShow && (
-                <TouchableOpacity onPress={onBackHandler}>
+                <TouchableOpacity onPress={onBackOldScreenHandler}>
                     <Image
-                        source={icons}
-                        style={[{width: 20, height: 20}]} />
+                        source={iconBack}
+                        style={[{width: 25, height: 25}]} />
                 </TouchableOpacity>
             )}
+
+                <TouchableOpacity
+                    style={[styles.headerUserBtn]}
+                    onPress={onToScreenInfor}>
+                    <Image
+                        source={iconUser}
+                        style={[{width: 25, height: 25}]} />
+                </TouchableOpacity>
         </View>
     )
 }

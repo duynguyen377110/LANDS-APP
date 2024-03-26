@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     back: false,
-    props: null
+    navigation: null
 }
 
 const storeHeader = createSlice({
@@ -10,11 +10,11 @@ const storeHeader = createSlice({
     initialState,
     reducers: {
         setHeader: (state, action) => {
-            let { props, back } = action.payload;
+            let { navigation, back } = action.payload;
 
             return {
                 ...state,
-                props,
+                navigation,
                 back
             };
         }
