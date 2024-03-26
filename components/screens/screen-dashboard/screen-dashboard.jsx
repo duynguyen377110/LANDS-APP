@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { View, ScrollView, Text } from "react-native";
+import { View, ScrollView, Text, FlatList } from "react-native";
 
 import environment from "../../../environment";
+import CommonHeader from "../../common/common-header/common-header";
 import CommonBanner from "../../common/common-banner/common-banner";
-import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
-import styles from "./screen-dashboard.style";
+// import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
+import styles from "./screen-dashboard-style";
+
+const dashboardBannerThumb = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg';
 
 const ScreenDashboard = (props) => {
     
@@ -45,12 +48,20 @@ const ScreenDashboard = (props) => {
 
     }, [])
 
+    const onToScreenAboutHandler = (event) => {
+        props.navigation.navigate('about');
+    }
+
     return (
-        <ScrollView>
+        <ScrollView style={{backgroundColor: '#ffffff'}}>
+            <CommonHeader backButtonShow={false} />
             <View style={[styles.screenDashboardComponent]}>
 
-                <CommonBanner />
-                <View style={[styles.screenDashboardContainer]}>
+                <CommonBanner
+                    bannerImage={dashboardBannerThumb}
+                    onAbout={onToScreenAboutHandler}/>
+
+                {/* <View style={[styles.screenDashboardContainer]}>
                     {categories.length > 0 && categories.map((elm) => {
                         return (
                             <CommonCardDashboard
@@ -59,7 +70,7 @@ const ScreenDashboard = (props) => {
                                 thumb={elm.thumbs[0]}/>
                         )
                     })}
-                </View>
+                </View> */}
             </View>
         </ScrollView>
     )

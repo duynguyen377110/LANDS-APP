@@ -1,5 +1,5 @@
 import { TouchableOpacity, Image, View, Text } from 'react-native';
-import styles from "./common-card-dashboard.style";
+import styles from "./common-card-dashboard-style";
 
 const CommonCardDashboard = (props) => {
     return (

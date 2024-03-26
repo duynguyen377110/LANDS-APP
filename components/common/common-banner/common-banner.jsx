@@ -7,11 +7,12 @@ const CommonBanner = (props) => {
         <View style={[styles.commonBannerContainer]}>
             <Image
                 style={[styles.bannerImage]}
-                source={{uri: 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg'}} />
+                source={{uri: props.bannerImage}} />
             <View style={[styles.bannerMask]}>
                 <View style={[styles.bannerMaskWrapper]}>
-                    <Text style={[styles.bannerTitle]}>Chính sách khách hàng</Text>
-                    <TouchableOpacity style={[styles.bannerBtn]}></TouchableOpacity>
+                    <TouchableOpacity onPress={props.onAbout}>
+                        <Text style={[styles.bannerTitle]}>Chính sách khách hàng</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>

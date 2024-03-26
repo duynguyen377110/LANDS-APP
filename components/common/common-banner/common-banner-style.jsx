@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     commonBannerContainer: {
-        backgroundColor: 'red',
+        backgroundColor: '#ffffff',
         borderRadius: 5,
         height: 200,
         overflow: 'hidden',
