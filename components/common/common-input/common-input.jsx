@@ -1,6 +1,6 @@
 import { View, Text, TextInput } from "react-native";
 
-import styles from "./common-input.style";
+import styles from "./common-input-style";
 
 const CommonInput = (props) => {
 

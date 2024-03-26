@@ -53,6 +53,10 @@ const ScreenDashboard = (props) => {
         props.navigation.navigate('about');
     }
 
+    const onNavigateDetailCategory = (data) => {
+        props.navigation.navigate("category-detail", {id: data._id});
+    }
+
     return (
         <ScrollView style={{backgroundColor: '#ffffff'}}>
             <CommonHeader
@@ -66,7 +70,9 @@ const ScreenDashboard = (props) => {
                     onAbout={onToScreenAboutHandler}/>
 
                 <CommonListScrollHorizontal
-                    data={categories}/>
+                    data={categories}
+                    title='Danh mục'
+                    onClick={onNavigateDetailCategory}/>
             </View>
         </ScrollView>
     )
