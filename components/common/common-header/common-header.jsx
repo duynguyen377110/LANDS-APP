@@ -11,11 +11,13 @@ const CommonHeader = (props) => {
 
     return (
         <View style={[styles.commonHeaderComponent]}>
-            <TouchableOpacity onPress={onBackHandler}>
-                <Image
-                    source={icons}
-                    style={[{width: 20, height: 20}]} />
-            </TouchableOpacity>
+            {props.backButtonShow && (
+                <TouchableOpacity onPress={onBackHandler}>
+                    <Image
+                        source={icons}
+                        style={[{width: 20, height: 20}]} />
+                </TouchableOpacity>
+            )}
         </View>
     )
 }

@@ -2,15 +2,17 @@ import { useState, useEffect } from "react";
 import { View, ScrollView, Text, FlatList } from "react-native";
 
 import environment from "../../../environment";
+import CommonHeader from "../../common/common-header/common-header";
 import CommonBanner from "../../common/common-banner/common-banner";
-import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
+// import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
 import styles from "./screen-dashboard-style";
+
+const dashboardBannerThumb = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg';
 
 const ScreenDashboard = (props) => {
     
     const url = `${environment.api.url}${environment.api.category.all}`;
     const [categories, setCategories] = useState([]);
-    const [bannerImage, setBannerImage] = useState('https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg')
 
     useEffect(() => {
         const calllApi = async () => {
@@ -52,10 +54,11 @@ const ScreenDashboard = (props) => {
 
     return (
         <ScrollView style={{backgroundColor: '#ffffff'}}>
+            <CommonHeader backButtonShow={false} />
             <View style={[styles.screenDashboardComponent]}>
 
                 <CommonBanner
-                    bannerImage={bannerImage}
+                    bannerImage={dashboardBannerThumb}
                     onAbout={onToScreenAboutHandler}/>
 
                 {/* <View style={[styles.screenDashboardContainer]}>
