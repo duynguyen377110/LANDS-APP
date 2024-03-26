@@ -1,6 +1,7 @@
 import { ScrollView, View, Text, Image } from "react-native";
 
 import CommonHeader from "../../common/common-header/common-header";
+import { commonStyles } from "../../../styles";
 import styles from "./screen-about-style";
 
 const banner = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711420399/lands/banner-about_yl9kf0.jpg';
@@ -13,7 +14,7 @@ const ScreenAbout = (props) => {
                 backButtonShow={true}
                 navigation={props.navigation}/>
 
-            <View style={[styles.screenAboutComponent]}>
+            <View style={[commonStyles.component.wrapperComponent]}>
                 <View style={[styles.aboutPoster]}>
                     <Image
                         style={[styles.aboutThumb]}
