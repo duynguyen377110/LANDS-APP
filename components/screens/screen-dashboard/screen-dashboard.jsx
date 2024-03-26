@@ -4,7 +4,7 @@ import { View, ScrollView, Text, FlatList } from "react-native";
 import environment from "../../../environment";
 import CommonHeader from "../../common/common-header/common-header";
 import CommonBanner from "../../common/common-banner/common-banner";
-// import CommonCardDashboard from "../../common/common-card/common-card-dashboard/common-card-dashboard";
+import CommonListScrollHorizontal from "../../common/common-list/common-list-scroll-horizontal/common-list-scroll-horizontal";
 import styles from "./screen-dashboard-style";
 
 const dashboardBannerThumb = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg';
@@ -64,16 +64,8 @@ const ScreenDashboard = (props) => {
                     bannerImage={dashboardBannerThumb}
                     onAbout={onToScreenAboutHandler}/>
 
-                {/* <View style={[styles.screenDashboardContainer]}>
-                    {categories.length > 0 && categories.map((elm) => {
-                        return (
-                            <CommonCardDashboard
-                                key={elm._id}
-                                title={elm.title}
-                                thumb={elm.thumbs[0]}/>
-                        )
-                    })}
-                </View> */}
+                <CommonListScrollHorizontal
+                    data={categories}/>
             </View>
         </ScrollView>
     )

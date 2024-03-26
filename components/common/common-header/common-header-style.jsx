@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginBottom: 15,
         paddingHorizontal: 15,
-        paddingTop: 20,
-        paddingBottom: 20,
+        paddingTop: 15,
+        paddingBottom: 15,
         elevation: 5,
     },
     headerUserBtn: {
