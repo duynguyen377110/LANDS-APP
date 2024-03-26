@@ -54,7 +54,10 @@ const ScreenDashboard = (props) => {
 
     return (
         <ScrollView style={{backgroundColor: '#ffffff'}}>
-            <CommonHeader backButtonShow={false} />
+            <CommonHeader
+                backButtonShow={false}
+                navigation={props.navigation} />
+
             <View style={[styles.screenDashboardComponent]}>
 
                 <CommonBanner
