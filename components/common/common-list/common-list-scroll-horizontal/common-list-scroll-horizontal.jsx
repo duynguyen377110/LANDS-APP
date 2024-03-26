@@ -14,7 +14,7 @@ const CommonListScrollHorizontal = (props) => {
                 return (
                     <TouchableOpacity>
                         <View style={[styles.viewCategory]}>
-                            <Text>{elm.item.title}</Text>
+                            <Text style={[styles.viewTitle]}>{elm.item.title}</Text>
                         </View>
                     </TouchableOpacity>
                 )

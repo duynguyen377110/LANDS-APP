@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const styles = {
-    colorFirst: '#c9e181',
+    colorFirst: '#efbe23',
     colorTwo: '#decf49',
     colorText: '#4b4b4b',
     colorError: '#f15454',

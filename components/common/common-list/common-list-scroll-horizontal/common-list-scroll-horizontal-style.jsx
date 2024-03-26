@@ -1,13 +1,14 @@
 import { StyleSheet } from "react-native";
+import { commonStyles } from "../../../../styles";
 
 const styles = StyleSheet.create({
     listScrollComponent: {
         paddingVertical: 15,
     },
     viewCategory: {
-        backgroundColor: '#ffffff',
+        backgroundColor: commonStyles.common.colorFirst,
         borderRadius: 25,
-        borderColor: '#878787',
+        borderColor: commonStyles.common.colorFirst,
         borderWidth: 1,
         shadowColor: '#171717',
         shadowOffset: {width: -2, height: 4},
@@ -18,10 +19,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         height: 50,
         marginRight: 15,
-        padding: 15,
         textAlign: 'center',
         width: 150,
-        
+    },
+    viewTitle: {
+        color: '#ffffff',
+        fontSize: 17,
+        fontWeight: '600',
     }
 })
 

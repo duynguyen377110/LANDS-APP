@@ -11,7 +11,7 @@ const dashboardBannerThumb = 'https://res.cloudinary.com/ditc3z3gj/image/upload/
 
 const ScreenDashboard = (props) => {
     
-    const url = `${environment.api.url}${environment.api.category.all}`;
+    const url = `${environment.api.url}${environment.api.category.common.all}`;
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
