@@ -10,6 +10,12 @@ const styles = {
     borderInput: '#ced4da',
 }
 
+const component = StyleSheet.create({
+    wrapperComponent: {
+        paddingHorizontal: 15,
+    }
+})
+
 const form = StyleSheet.create({
     fromContainer: {
         flex: 1,
@@ -78,4 +84,4 @@ const loader = StyleSheet.create({
     }
 })
 
-export const commonStyles = { button, common: styles, form, loader };
+export const commonStyles = { button, common: styles, component, form, loader };

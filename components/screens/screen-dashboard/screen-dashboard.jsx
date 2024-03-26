@@ -5,6 +5,7 @@ import environment from "../../../environment";
 import CommonHeader from "../../common/common-header/common-header";
 import CommonBanner from "../../common/common-banner/common-banner";
 import CommonListScrollHorizontal from "../../common/common-list/common-list-scroll-horizontal/common-list-scroll-horizontal";
+import { commonStyles } from "../../../styles";
 import styles from "./screen-dashboard-style";
 
 const dashboardBannerThumb = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg';
@@ -58,7 +59,7 @@ const ScreenDashboard = (props) => {
                 backButtonShow={false}
                 navigation={props.navigation} />
 
-            <View style={[styles.screenDashboardComponent]}>
+            <View style={[commonStyles.component.wrapperComponent]}>
 
                 <CommonBanner
                     bannerImage={dashboardBannerThumb}
