@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     inforBackground: {
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
         height: 200,
         left: 0,
         right: 0,
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     },
     inforWrapper: {
         borderRadius: 5,
-        height: 350,
+        minHeight: 700,
+        flex: 1,
         position: 'relative',
         top: 150,
         width: '100%',
@@ -33,6 +34,59 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 15,
         elevation: 5,
+    },
+    inforUserCommon: {
+        borderBottomWidth: 1,
+        borderColor: '#000000',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 10,
+        marginBottom: 10,
+        paddingBottom: 10,
+    },
+    inforUserCommonName: {
+        fontSize: 18,
+        fontWeight: 700,
+        textTransform: 'uppercase'
+    },
+    inforUserEssental: {
+        borderBottomWidth: 1,
+        borderColor: '#000000',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 15,
+        paddingVertical: 15,
+    },
+    inforUserEssentalIcon: {
+        height: 20,
+        marginLeft: 35,
+        width: 20,
+    },
+    inforUserEssentalTitle: {
+        fontSize: 14,
+        textAlign: 'center',
+    },
+    // SIGNOUT
+    inforSignout: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingVertical: 35,
+    },
+    btnSignout: {
+        backgroundColor: '#ef3636',
+        borderRadius: 25,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 45,
+        width: 115,
+    },
+    btnSignoutTitle: {
+        color: '#ffffff',
+        fontSize: 15,
+        fontWeight: 600,
     }
 })
 
