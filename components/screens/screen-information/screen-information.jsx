@@ -4,6 +4,9 @@ import { commonStyles } from "../../../styles";
 import styles from './screen-information-style';
 
 const iconUser = require("../../../assets/icons/user-profile-svgrepo-com.png");
+const iconEmail = require("../../../assets/icons/email-svgrepo-com.png");
+const iconPhone = require("../../../assets/icons/smartphone-svgrepo-com.png");
+const iconAddress = require("../../../assets/icons/notebook-address-book-svgrepo-com.png");
 const bannerInfor = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711441889/lands/banner-infor_pgl7ks.jpg';
 
 const ScreenInformation = (props) => {
@@ -33,17 +36,23 @@ const ScreenInformation = (props) => {
                         </View>
 
                         <View style={[styles.inforUserEssental]}>
-                            <Image  style={[styles.inforUserEssentalIcon]} source={iconUser} />
+                            <Image
+                                style={[styles.inforUserEssentalIcon]}
+                                source={iconEmail} />
                             <Text style={[styles.inforUserEssentalTitle]}>nguyenvana@gmail.com</Text>
                         </View>
 
                         <View style={[styles.inforUserEssental]}>
-                            <Image  style={[styles.inforUserEssentalIcon]} source={iconUser} />
+                            <Image
+                                style={[styles.inforUserEssentalIcon]}
+                                source={iconPhone} />
                             <Text style={[styles.inforUserEssentalTitle]}>999 999 9989</Text>
                         </View>
 
                         <View style={[styles.inforUserEssental]}>
-                            <Image style={[styles.inforUserEssentalIcon]} source={iconUser} />
+                            <Image
+                                style={[styles.inforUserEssentalIcon]}
+                                source={iconAddress} />
                             <Text style={[styles.inforUserEssentalTitle]}>30 Tan Thanh/ Tan Phu/ TP HCM</Text>
                         </View>
 
