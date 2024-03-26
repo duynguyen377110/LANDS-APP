@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { commonStyles } from "../../../styles";
 
 const styles = StyleSheet.create({
     inforComponent: {
@@ -7,7 +8,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     inforBackground: {
-        // backgroundColor: 'red',
         height: 200,
         left: 0,
         right: 0,
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     },
     inforWrapper: {
         borderRadius: 5,
-        minHeight: 700,
+        minHeight: 550,
         flex: 1,
         position: 'relative',
         top: 150,
@@ -33,11 +33,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         borderRadius: 10,
         padding: 15,
+        paddingTop: 30,
         elevation: 5,
     },
     inforUserCommon: {
         borderBottomWidth: 1,
-        borderColor: '#000000',
+        borderColor: commonStyles.common.borderColor,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     },
     inforUserEssental: {
         borderBottomWidth: 1,
-        borderColor: '#000000',
+        borderColor: commonStyles.common.borderColor,
         flexDirection: 'row',
         alignItems: 'center',
         gap: 15,

@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         fontSize: 17,
         fontWeight: 600,
-        width: 100
+        width: '75%',
     },
     bannerBtnIcon: {
         color: '#ffffff'

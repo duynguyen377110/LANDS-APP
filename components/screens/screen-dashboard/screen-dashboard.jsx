@@ -71,7 +71,7 @@ const ScreenDashboard = (props) => {
 
                 <CommonListScrollHorizontal
                     data={categories}
-                    title='Danh mục'
+                    title='Phương thức giao dịch'
                     onClick={onNavigateDetailCategory}/>
             </View>
         </ScrollView>

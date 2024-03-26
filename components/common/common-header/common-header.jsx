@@ -29,7 +29,7 @@ const CommonHeader = (props) => {
                     onPress={onToScreenInfor}>
                     <Image
                         source={iconUser}
-                        style={[{width: 25, height: 25}]} />
+                        style={[{width: 35, height: 35}]} />
                 </TouchableOpacity>
         </View>
     )
