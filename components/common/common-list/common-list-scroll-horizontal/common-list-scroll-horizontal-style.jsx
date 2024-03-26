@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         height: 50,
         marginRight: 15,
         textAlign: 'center',
-        width: 150,
+        width: 165,
     },
     viewTitle: {
         color: '#ffffff',
