@@ -3,7 +3,7 @@ import { commonStyles } from "../../../../styles";
 
 const styles = StyleSheet.create({
     title: {
-        color: '#222222',
+        color: commonStyles.common.colorText,
         fontSize: 15,
         fontWeight: 700,
         marginTop: 15,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     viewTitle: {
         color: '#ffffff',
-        fontSize: 17,
+        fontSize: 15,
         fontWeight: '600',
     }
 })

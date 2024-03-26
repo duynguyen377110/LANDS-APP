@@ -8,6 +8,7 @@ const styles = {
     colorOpacity: '#ededed70',
     bgForm: '#e9e9e9',
     borderInput: '#ced4da',
+    borderColor: '#ced4da',
 }
 
 const component = StyleSheet.create({
