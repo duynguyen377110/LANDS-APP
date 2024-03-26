@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderColor: commonStyles.common.borderInput,
         marginVertical: 5,
-        padding: 5,
+        paddingHorizontal: 15,
+        paddingVertical: 5,
         width: '100%'
     },
     inputInvalid: {

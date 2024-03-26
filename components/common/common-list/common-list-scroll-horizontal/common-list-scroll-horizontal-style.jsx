@@ -2,8 +2,16 @@ import { StyleSheet } from "react-native";
 import { commonStyles } from "../../../../styles";
 
 const styles = StyleSheet.create({
+    title: {
+        color: '#222222',
+        fontSize: 15,
+        fontWeight: 700,
+        marginTop: 15,
+        marginBottom: 5,
+        textTransform: 'uppercase',
+    },
     listScrollComponent: {
-        paddingVertical: 15,
+        paddingVertical: 5,
     },
     viewCategory: {
         backgroundColor: commonStyles.common.colorFirst,
