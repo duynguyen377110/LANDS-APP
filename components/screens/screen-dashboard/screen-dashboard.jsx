@@ -9,10 +9,10 @@ import { commonStyles } from "../../../styles";
 import styles from "./screen-dashboard-style";
 
 const dashboardBannerThumb = 'https://res.cloudinary.com/ditc3z3gj/image/upload/v1711359072/lands/banner_ximjch.jpg';
+const url = `${environment.api.url}${environment.api.category.common.all}`;
 
 const ScreenDashboard = (props) => {
     
-    const url = `${environment.api.url}${environment.api.category.common.all}`;
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
