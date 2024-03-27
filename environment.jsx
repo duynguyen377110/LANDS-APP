@@ -6,9 +6,9 @@ const environment = {
                 signup: 'common-access/signup'
             },
             category: {
-                // all: 'mobile/category',
                 common: {
-                    all: '/common/category/all'
+                    root: 'common/category',
+                    all: 'common/category/all'
                 },
                 mobile: {
 
@@ -23,9 +23,9 @@ const environment = {
                 signup: 'common-access/signup'
             },
             category: {
-                // all: 'mobile/category',
                 common: {
-                    all: '/common/category/all'
+                    root: 'common/category',
+                    all: 'common/category/all'
                 },
                 mobile: {
 

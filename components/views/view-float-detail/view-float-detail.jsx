@@ -11,9 +11,9 @@ const ViewFloatDetail = (props) => {
             <View style={[styles.banner]}>
                 <Image
                     style={[styles.bannerThumb]}
-                    source={{uri: bannerInfor}}/>
+                    source={{uri: props.thumb}}/>
                 <View style={[styles.bannerMask]}></View>
-                <Text style={[styles.bannerTitle]}>Titile category</Text>
+                <Text style={[styles.bannerTitle]}>{props.title}</Text>
             </View>
 
             <View style={[styles.container]}>
