@@ -4,6 +4,7 @@ import { View, ScrollView, Text, FlatList } from "react-native";
 import environment from "../../../environment";
 import CommonHeader from "../../common/common-header/common-header";
 import CommonBanner from "../../common/common-banner/common-banner";
+import CommonProductCard from "../../common/common-product-card/common-product-card";
 import CommonListScrollHorizontal from "../../common/common-list/common-list-scroll-horizontal/common-list-scroll-horizontal";
 import { commonStyles } from "../../../styles";
 import styles from "./screen-dashboard-style";
@@ -74,8 +75,17 @@ const ScreenDashboard = (props) => {
                     title='Danh mục'
                     onClick={onNavigateDetailCategory}/>
 
-                <View>
-                    
+                <View style={[styles.wrapperProduct]}>
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
+                    <CommonProductCard />
                 </View>
             </View>
         </ScrollView>
