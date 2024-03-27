@@ -73,6 +73,10 @@ const ScreenDashboard = (props) => {
                     data={categories}
                     title='Danh mục'
                     onClick={onNavigateDetailCategory}/>
+
+                <View>
+                    
+                </View>
             </View>
         </ScrollView>
     )

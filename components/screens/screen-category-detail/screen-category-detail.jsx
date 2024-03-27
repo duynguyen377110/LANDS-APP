@@ -58,6 +58,14 @@ const ScreenCategoryDetail = (props) => {
                         <CommonProductCard />
                         <CommonProductCard />
                         <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
                     </View>
                 </ViewFloatDetail>
         </ScrollView>
