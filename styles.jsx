@@ -7,6 +7,7 @@ const styles = {
     colorError: '#f15454',
     colorOpacity: '#ededed70',
     bgForm: '#e9e9e9',
+    bgCommon: '#f2f2f2',
     bgMask: '#3b3b3b1f',
     borderInput: '#ced4da',
     borderColor: '#ced4da',
