@@ -1,5 +1,6 @@
 import { ScrollView, View, Text, Image, TouchableOpacity, BackHandler } from "react-native";
 import CommonHeader from "../../common/common-header/common-header";
+import ViewFloatDetail from "../../views/view-float-detail/view-float-detail";
 import { commonStyles } from "../../../styles";
 import styles from './screen-information-style';
 
@@ -21,52 +22,42 @@ const ScreenInformation = (props) => {
                 backButtonShow={true}
                 navigation={props.navigation}/>
 
-            <View style={[
-                commonStyles.component.wrapperComponent,
-                styles.inforComponent
-            ]}>
-                <View style={[styles.inforBackground]}>
-                    <Image style={[styles.inforBackgroundBanner]} source={{uri: bannerInfor}} />
-                </View>
-                <View style={[styles.inforWrapper]}>
-                    <View style={[styles.inforWrapperContent]}>
-                        <View style={[styles.inforUserCommon]}>
-                            <Image  style={[{width: 50, height: 50}]} source={iconUser} />
-                            <Text style={[styles.inforUserCommonName]}>Nguyen Van A</Text>
-                        </View>
-
-                        <View style={[styles.inforUserEssental]}>
-                            <Image
-                                style={[styles.inforUserEssentalIcon]}
-                                source={iconEmail} />
-                            <Text style={[styles.inforUserEssentalTitle]}>nguyenvana@gmail.com</Text>
-                        </View>
-
-                        <View style={[styles.inforUserEssental]}>
-                            <Image
-                                style={[styles.inforUserEssentalIcon]}
-                                source={iconPhone} />
-                            <Text style={[styles.inforUserEssentalTitle]}>999 999 9989</Text>
-                        </View>
-
-                        <View style={[styles.inforUserEssental]}>
-                            <Image
-                                style={[styles.inforUserEssentalIcon]}
-                                source={iconAddress} />
-                            <Text style={[styles.inforUserEssentalTitle]}>30 Tan Thanh/ Tan Phu/ TP HCM</Text>
-                        </View>
-
-                        <View style={[styles.inforSignout]}>
-                            <TouchableOpacity
-                                onPress={onExitHandler}
-                                style={styles.btnSignout}>
-                                <Text style={[styles.btnSignoutTitle]}>Đăng xuất</Text>
-                            </TouchableOpacity>
-                        </View>
-
+            <ViewFloatDetail
+                thumb={bannerInfor}>
+                    <View style={[styles.userInfor]}>
+                        <Image  style={[{width: 50, height: 50}]} source={iconUser} />
+                        <Text style={[styles.userName]}>Nguyen Van A</Text>
                     </View>
-                </View>
-            </View>
+
+                    <View style={[styles.inforItem]}>
+                        <Image
+                            style={[styles.inforIcon]}
+                            source={iconEmail} />
+                        <Text style={[styles.inforContent]}>nguyenvana@gmail.com</Text>
+                    </View>
+
+                    <View style={[styles.inforItem]}>
+                        <Image
+                            style={[styles.inforIcon]}
+                            source={iconPhone} />
+                        <Text style={[styles.inforContent]}>999 999 9989</Text>
+                    </View>
+
+                    <View style={[styles.inforItem]}>
+                        <Image
+                            style={[styles.inforIcon]}
+                            source={iconAddress} />
+                        <Text style={[styles.inforContent]}>30 Tan Thanh/ Tan Phu/ TP HCM</Text>
+                    </View>
+
+                    <View style={{marginTop: 25}}>
+                        <TouchableOpacity
+                            onPress={onExitHandler}
+                            style={styles.logoutBtn}>
+                            <Text style={[styles.titleBtn]}>Đăng xuất</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ViewFloatDetail>
         </ScrollView>
     )
 }

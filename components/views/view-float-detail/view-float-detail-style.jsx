@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         height: 200,
         right: 0,
         position: 'absolute',
-        top: -15,
+        top: 0,
         width: 'max-content',
         zIndex: -1,
     },
