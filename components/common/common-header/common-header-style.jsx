@@ -6,9 +6,11 @@ const styles = StyleSheet.create({
         elevation: 5,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         marginBottom: 15,
+        paddingBottom: 10,
+        paddingTop: 15,
         paddingHorizontal: 15,
-        paddingVertical: 15,
     },
     headerUserBtn: {
         alignSelf: 'flex-end',

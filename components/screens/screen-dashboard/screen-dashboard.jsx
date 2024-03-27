@@ -29,13 +29,13 @@ const ScreenDashboard = (props) => {
 
                 let { status, categories} = await res.json();
                 if(status) {
-                    categories = categories.map((elm) => {
-                        elm.thumbs = elm.thumbs.map((thumb) => {
-                            thumb = thumb.replace('upload', 'upload/w_200,h_200,c_scale');
-                            return thumb;
-                        })
-                        return elm
-                    })
+                    // categories = categories.map((elm) => {
+                    //     elm.thumbs = elm.thumbs.map((thumb) => {
+                    //         thumb = thumb.replace('upload', 'upload/w_200,h_200,c_scale');
+                    //         return thumb;
+                    //     })
+                    //     return elm
+                    // })
                     setCategories(categories);
                 }
 
@@ -71,7 +71,7 @@ const ScreenDashboard = (props) => {
 
                 <CommonListScrollHorizontal
                     data={categories}
-                    title='Phương thức giao dịch'
+                    title='Danh mục'
                     onClick={onNavigateDetailCategory}/>
             </View>
         </ScrollView>

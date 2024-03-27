@@ -4,6 +4,8 @@ import environment from "../../../environment";
 
 import CommonHeader from "../../common/common-header/common-header";
 import ViewFloatDetail from "../../views/view-float-detail/view-float-detail";
+import CommonProductCard from "../../common/common-product-card/common-product-card";
+import styles from "./screen-category-detail-style";
 
 const url = `${environment.api.url}${environment.api.category.common.root}`;
 
@@ -49,7 +51,15 @@ const ScreenCategoryDetail = (props) => {
 
             <ViewFloatDetail
                 thumb={category?.thumbs[0]}
-                title={category?.title}/>
+                title={category?.title}>
+
+                    <View style={[styles.wrapperProduct]}>
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                        <CommonProductCard />
+                    </View>
+                </ViewFloatDetail>
         </ScrollView>
     )
 }

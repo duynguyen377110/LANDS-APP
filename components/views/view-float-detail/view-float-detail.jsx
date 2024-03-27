@@ -17,7 +17,7 @@ const ViewFloatDetail = (props) => {
             </View>
 
             <View style={[styles.container]}>
-                <Text>Content</Text>
+                {props.children}
             </View>
         </View>
     )

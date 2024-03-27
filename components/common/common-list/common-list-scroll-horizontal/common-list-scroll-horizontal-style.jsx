@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         fontWeight: 700,
         marginTop: 15,
         marginBottom: 5,
-        textTransform: 'uppercase',
+        textTransform: 'capitalize',
     },
     listScrollComponent: {
         paddingVertical: 5,
@@ -28,11 +28,11 @@ const styles = StyleSheet.create({
         height: 50,
         marginRight: 15,
         textAlign: 'center',
-        width: 165,
+        width: 160,
     },
     viewTitle: {
         color: '#ffffff',
-        fontSize: 15,
+        fontSize: 14,
         fontWeight: '600',
     }
 })
