@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     aboutPoster: {
-        backgroundColor: 'red',
         borderRadius: 5,
         height: 200,
         marginBottom: 15,

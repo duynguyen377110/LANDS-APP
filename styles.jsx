@@ -7,6 +7,7 @@ const styles = {
     colorError: '#f15454',
     colorOpacity: '#ededed70',
     bgForm: '#e9e9e9',
+    bgMask: '#3b3b3b1f',
     borderInput: '#ced4da',
     borderColor: '#ced4da',
 }
@@ -14,6 +15,13 @@ const styles = {
 const component = StyleSheet.create({
     wrapperComponent: {
         paddingHorizontal: 15,
+    }
+})
+
+const view = StyleSheet.create({
+    wrapperView: {
+        paddingHorizontal: 15,
+        width: '100%',
     }
 })
 
@@ -85,4 +93,4 @@ const loader = StyleSheet.create({
     }
 })
 
-export const commonStyles = { button, common: styles, component, form, loader };
+export const commonStyles = { button, common: styles, component, form, loader, view };
