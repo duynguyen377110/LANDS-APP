@@ -66,8 +66,11 @@ const styles = StyleSheet.create({
     },
     inforUserEssentalTitle: {
         fontSize: 14,
-        textAlign: 'center',
+        textAlign: 'left',
+        flex: 1,
+        flexWrap: 'wrap'
     },
+
     // SIGNOUT
     inforSignout: {
         flexDirection: 'row',
