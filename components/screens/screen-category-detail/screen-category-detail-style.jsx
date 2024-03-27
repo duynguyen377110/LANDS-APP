@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     wrapperProduct: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        rowGap: 20,
+        rowGap: 30,
         columnGap: 15,
     }
 })
