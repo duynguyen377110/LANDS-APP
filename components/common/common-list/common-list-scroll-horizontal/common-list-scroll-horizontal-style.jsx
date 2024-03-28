@@ -13,10 +13,10 @@ const styles = StyleSheet.create({
     listScrollComponent: {
         paddingVertical: 5,
     },
-    viewCategory: {
-        backgroundColor: commonStyles.common.colorFirst,
+    viewWrapper: {
+        backgroundColor: commonStyles.common.bgCommonOne,
         borderRadius: 25,
-        borderColor: commonStyles.common.colorFirst,
+        borderColor: commonStyles.common.bgCommonOne,
         borderWidth: 1,
         shadowColor: '#171717',
         shadowOffset: {width: -2, height: 4},
@@ -30,10 +30,17 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         width: 160,
     },
+    viewWrapperActive: {
+        backgroundColor: commonStyles.common.colorFirst,
+        borderColor: commonStyles.common.colorFirst,
+    },
     viewTitle: {
         color: '#ffffff',
         fontSize: 14,
         fontWeight: '600',
+    },
+    viewTitleActive: {
+        color: commonStyles.common.colorFirst,
     }
 })
 
