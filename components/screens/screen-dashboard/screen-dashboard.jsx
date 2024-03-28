@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { View, ScrollView, Text, FlatList } from "react-native";
+import { View, ScrollView } from "react-native";
 
 import environment from "../../../environment";
 import CommonHeader from "../../common/common-header/common-header";
@@ -30,13 +30,6 @@ const ScreenDashboard = (props) => {
 
                 let { status, categories} = await res.json();
                 if(status) {
-                    // categories = categories.map((elm) => {
-                    //     elm.thumbs = elm.thumbs.map((thumb) => {
-                    //         thumb = thumb.replace('upload', 'upload/w_200,h_200,c_scale');
-                    //         return thumb;
-                    //     })
-                    //     return elm
-                    // })
                     setCategories(categories);
                 }
 
