@@ -57,7 +57,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        gap: 10,
+        rowGap: 20,
+        columnGap: 10,
+        // height: 50,
+        overflow: 'scroll',
         paddingBottom: 15,
     },
     productThumbsContent: {

@@ -51,6 +51,15 @@ const ScreenProductDetail = (props) => {
                     <Image style={[styles.productBanner]} source={{uri: product.thumbs[0]}} />
                     <Text style={styles.productOwner}>{product.productOwner}</Text>
 
+                    <Text style={[styles.titleProduct]}>Ảnh sản phẩm:</Text>
+                    <View style={[styles.productThumbs]}>
+                        {product.thumbs.length > 0 && product.thumbs.map((thumb, index) => {
+                            return (
+                                <Image key={index} style={[styles.productThumbsContent]} source={{uri: thumb}} />
+                            )
+                        })}
+                    </View>
+
                     <Text style={[styles.titleProduct]}>Thông tin sản phẩm:</Text>
                     <View style={[styles.productInfor]}>
                         <View style={[styles.productInforRow]}>
@@ -75,17 +84,10 @@ const ScreenProductDetail = (props) => {
 
                         <View style={[styles.productInforRow, {borderBottomWidth: 0}]}>
                             <Text style={[styles.productInforTitle]}>Giá đề xuất</Text>
-                            <Text style={[styles.productInforContent]}>{product.price.$numberDecimal}</Text>
+                            <Text style={[styles.productInforContent]}>{
+                                product.price.$numberDecimal.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+                            } VND</Text>
                         </View>
-                    </View>
-
-                    <Text style={[styles.titleProduct]}>Ảnh sản phẩm:</Text>
-                    <View style={[styles.productThumbs]}>
-                        {product.thumbs.length > 0 && product.thumbs.map((thumb, index) => {
-                            return (
-                                <Image key={index} style={[styles.productThumbsContent]} source={{uri: thumb}} />
-                            )
-                        })}
                     </View>
                 </View>
             )}
