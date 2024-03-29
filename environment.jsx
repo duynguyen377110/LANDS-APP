@@ -13,6 +13,11 @@ const environment = {
                 mobile: {
 
                 }
+            },
+            product: {
+                common: {
+                    root: 'common/product'
+                }
             }
         }
     },
@@ -29,6 +34,11 @@ const environment = {
                 },
                 mobile: {
 
+                }
+            },
+            product: {
+                common: {
+                    root: 'common/product'
                 }
             }
         }
