@@ -68,18 +68,7 @@ const ScreenDashboard = (props) => {
                     title='Danh mục'
                     onClick={onNavigateDetailCategory}/>
 
-                <View style={[styles.wrapperProduct]}>
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                    <CommonProductCard />
-                </View>
+                {/* <View style={[styles.wrapperProduct]}></View> */}
             </View>
         </ScrollView>
     )

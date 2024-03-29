@@ -10,6 +10,7 @@ import ScreenDashboard from "../components/screens/screen-dashboard/screen-dashb
 import ScreenAbout from "../components/screens/screen-about/screen-about";
 import ScreenInformation from "../components/screens/screen-information/screen-information";
 import ScreenCategoryDetail from "../components/screens/screen-category-detail/screen-category-detail";
+import ScreenProductDetail from "../components/screens/screen-product-detail/screen-product-detail";
 import { commonStyles } from '../styles';
 
 const Stack = createNativeStackNavigator();
@@ -49,6 +50,11 @@ const Router = (props) => {
                     options={{headerShown: false}}
                     name="category-detail"
                     component={ScreenCategoryDetail}/>
+
+                <Stack.Screen
+                    options={{headerShown: false}}
+                    name="product-detail"
+                    component={ScreenProductDetail}/>
                     
             </Stack.Navigator>
 

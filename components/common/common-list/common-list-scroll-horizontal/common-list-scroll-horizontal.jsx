@@ -15,7 +15,7 @@ const CommonListScrollHorizontal = (props) => {
                 dispatch(setCurrentItem({key: props.data[0]?._id}));
             }
         }
-    }, [listScrollHorizontal.currentItem])
+    }, [])
     
     const onClickHandler = (data) => {
         dispatch(setCurrentItem({key: data?._id}));
