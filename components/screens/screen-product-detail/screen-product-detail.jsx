@@ -28,7 +28,6 @@ const ScreenProductDetail = (props) => {
 
                 let { status, product} = await res.json();
                 if(status) {
-                    console.log(product);
                     setProduct(product);
                 }
 
@@ -51,6 +50,43 @@ const ScreenProductDetail = (props) => {
                 <View style={[commonStyles.component.wrapperComponent]}>
                     <Image style={[styles.productBanner]} source={{uri: product.thumbs[0]}} />
                     <Text style={styles.productOwner}>{product.productOwner}</Text>
+
+                    <Text style={[styles.titleProduct]}>Thông tin sản phẩm:</Text>
+                    <View style={[styles.productInfor]}>
+                        <View style={[styles.productInforRow]}>
+                            <Text style={[styles.productInforTitle]}>Ngày đăng</Text>
+                            <Text style={[styles.productInforContent]}>{new Date(product.createdAt).toLocaleDateString()}</Text>
+                        </View>
+
+                        <View style={[styles.productInforRow]}>
+                            <Text style={[styles.productInforTitle]}>Địa chỉ</Text>
+                            <Text style={[styles.productInforContent]}>{product.address}</Text>
+                        </View>
+
+                        <View style={[styles.productInforRow]}>
+                            <Text style={[styles.productInforTitle]}>Liên hệ</Text>
+                            <Text style={[styles.productInforContent]}>{product.contact}</Text>
+                        </View>
+
+                        <View style={[styles.productInforRow]}>
+                            <Text style={[styles.productInforTitle]}>Diện tích</Text>
+                            <Text style={[styles.productInforContent]}>{product.landArea}</Text>
+                        </View>
+
+                        <View style={[styles.productInforRow, {borderBottomWidth: 0}]}>
+                            <Text style={[styles.productInforTitle]}>Giá đề xuất</Text>
+                            <Text style={[styles.productInforContent]}>{product.price.$numberDecimal}</Text>
+                        </View>
+                    </View>
+
+                    <Text style={[styles.titleProduct]}>Ảnh sản phẩm:</Text>
+                    <View style={[styles.productThumbs]}>
+                        {product.thumbs.length > 0 && product.thumbs.map((thumb, index) => {
+                            return (
+                                <Image key={index} style={[styles.productThumbsContent]} source={{uri: thumb}} />
+                            )
+                        })}
+                    </View>
                 </View>
             )}
         </ScrollView>
