@@ -11,6 +11,8 @@ import ScreenAbout from "../components/screens/screen-about/screen-about";
 import ScreenInformation from "../components/screens/screen-information/screen-information";
 import ScreenCategoryDetail from "../components/screens/screen-category-detail/screen-category-detail";
 import ScreenProductDetail from "../components/screens/screen-product-detail/screen-product-detail";
+
+import CommonMessage from "../components/common/common-message/common-message";
 import { commonStyles } from '../styles';
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +64,8 @@ const Router = (props) => {
                 commonStyles.loader.loader,
                 loader.isLoader? commonStyles.loader.loaderActive : {}
             ]}/>
+
+            <CommonMessage />
         </React.Fragment>
     )
 }

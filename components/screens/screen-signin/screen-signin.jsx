@@ -1,4 +1,5 @@
 import { Image, View, Text, KeyboardAvoidingView, Platform } from "react-native";
+import { useDispatch } from "react-redux";
 import useValdator from "../../../hook/use-validator";
 import useHttp from "../../../hook/use-http";
 
@@ -7,10 +8,14 @@ import CommonInput from "../../common/common-input/common-input";
 import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
 
+import { open } from "../../../store/store-message";
+import { signin } from "../../../store/store-auth";
+
 const icon = require("../../../assets/ic_launcher_foreground.png");
 const url = `${environment.api.url}${environment.api.auth.signin}`;
 
 const ScreenSignin = (props) => {
+    const dispatch = useDispatch();
 
     const {
         value: emailVal, valid: emailValid,
@@ -42,13 +47,25 @@ const ScreenSignin = (props) => {
             }
 
             http('POST', payload, (res) => {
-                let { status, metadata } = res;
+                let { status, metadata, message } = res;
+
                 if(status) {
-                    console.log(metadata);
                     emailResetVal();
                     passResetVal();
+
+                    dispatch(signin({
+                        accessToke: metadata.accessToken,
+                        refreshToken: metadata.refreshToken,
+                        address: metadata.address,
+                        email: metadata.email,
+                        phone: metadata.phone,
+                        id: metadata.userId
+                    }))
                     props.navigation.navigate('dashboard');
                     return;
+
+                } else {
+                    dispatch(open({message}));
                 }
             })
         }

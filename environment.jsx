@@ -1,7 +1,7 @@
 const environment = {
     dev: {
         api: {
-            url: 'https://2d39-171-251-232-242.ngrok-free.app/api/v1/',
+            url: 'https://1142-171-251-232-242.ngrok-free.app/api/v1/',
             auth: {
                 signup: 'common/access/signup',
                 signin: 'common/access/signin',
