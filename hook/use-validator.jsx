@@ -95,6 +95,10 @@ const useValdator = (condition = []) => {
         dispatchValid({type: 'VALID', options: condition, value: val});
     }
 
+    const blurElm = (val) => {
+        dispatchValid({type: 'VALID', options: condition, value: val});
+    }
+
     const enterVal = (val) => {
         setValue(val);
     }
@@ -108,6 +112,7 @@ const useValdator = (condition = []) => {
         value,
         valid,
         verifyElm,
+        blurElm,
         enterVal,
         resetVal
     }
