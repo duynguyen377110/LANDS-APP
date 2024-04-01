@@ -1,5 +1,4 @@
 import { Image, View, Text, KeyboardAvoidingView, Platform } from "react-native";
-import { useSelector } from "react-redux";
 import useValdator from "../../../hook/use-validator";
 import useHttp from "../../../hook/use-http";
 
@@ -9,42 +8,50 @@ import CommonButton from "../../common/common-button/common-button";
 import { commonStyles } from "../../../styles";
 
 const icon = require("../../../assets/ic_launcher_foreground.png");
+const url = `${environment.api.url}${environment.api.auth.signin}`;
 
 const ScreenSignin = (props) => {
-    const path = `${environment.api.url}${environment.api.auth.signup}`;
-    const loader = useSelector((state) => state.loader);
 
     const {
         value: emailVal, valid: emailValid,
         verifyElm: veryfiEmail,
+        blurElm: blurEmail,
         enterVal: emailEnterVal, resetVal: emailResetVal
     } = useValdator(['require', 'email']);
 
     const {
         value: passVal, valid: passValid,
         verifyElm: veryfiPass,
+        blurElm: blurPass,
         enterVal: passEnterVal, resetVal: passResetVal
     } = useValdator(['require', 'password']);
 
-    const { http } = useHttp(path);
+    const { http } = useHttp(url);
 
     const onSignInHandler = async (e) => {
-        
         veryfiEmail(emailVal);
         veryfiPass(passVal);
 
-        if(!emailValid.status && !passValid.status) return;
+        let statusValid = (emailValid.status && passValid.status);
+        let statusValue = (emailVal && passVal);
 
-        let payload = {
-            email: emailVal,
-            password: passVal
+        if(statusValid && statusValue) {
+            let payload = {
+                email: emailVal,
+                password: passVal
+            }
+
+            http('POST', payload, (res) => {
+                let { status, metadata } = res;
+                if(status) {
+                    console.log(metadata);
+                    emailResetVal();
+                    passResetVal();
+                    props.navigation.navigate('dashboard');
+                    return;
+                }
+            })
         }
-        http('POST', payload, (res) => {
-            console.log(res);
-            emailResetVal();
-            passResetVal();
-            props.navigation.navigate('dashboard');
-        })
 
     }
 
@@ -66,14 +73,16 @@ const ScreenSignin = (props) => {
                     label='E-mail'
                     value={emailVal}
                     valid={emailValid}
-                    change={emailEnterVal}/>
+                    change={emailEnterVal}
+                    blur={blurEmail}/>
 
                 <CommonInput
                     label='Mật khẩu'
                     type='password'
                     value={passVal}
                     valid={passValid}
-                    change={passEnterVal}/>
+                    change={passEnterVal}
+                    blur={blurPass}/>
 
                 <CommonButton
                 title="Đăng nhập"
