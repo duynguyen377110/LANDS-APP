@@ -9,8 +9,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 15,
         paddingBottom: 10,
-        paddingTop: 15,
+        paddingTop: 30,
         paddingHorizontal: 15,
+    },
+    boxUser: {
+        alignSelf: 'flex-end',
+        marginLeft: 'auto'
     },
     headerUserBtn: {
         alignSelf: 'flex-end',

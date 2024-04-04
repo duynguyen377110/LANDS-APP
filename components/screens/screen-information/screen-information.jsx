@@ -26,28 +26,28 @@ const ScreenInformation = (props) => {
                 thumb={bannerInfor}>
                     <View style={[styles.userInfor]}>
                         <Image  style={[{width: 50, height: 50}]} source={iconUser} />
-                        <Text style={[styles.userName]}>Nguyen Van A</Text>
+                        <Text style={[styles.userName]}>Nguyễn Phương Duy</Text>
                     </View>
 
                     <View style={[styles.inforItem]}>
                         <Image
                             style={[styles.inforIcon]}
                             source={iconEmail} />
-                        <Text style={[styles.inforContent]}>nguyenvana@gmail.com</Text>
+                        <Text style={[styles.inforContent]}>duynpfx20753@funix.edu.vn</Text>
                     </View>
 
                     <View style={[styles.inforItem]}>
                         <Image
                             style={[styles.inforIcon]}
                             source={iconPhone} />
-                        <Text style={[styles.inforContent]}>999 999 9989</Text>
+                        <Text style={[styles.inforContent]}>0352 438 729</Text>
                     </View>
 
                     <View style={[styles.inforItem]}>
                         <Image
                             style={[styles.inforIcon]}
                             source={iconAddress} />
-                        <Text style={[styles.inforContent]}>30 Tan Thanh/ Tan Phu/ TP HCM</Text>
+                        <Text style={[styles.inforContent]}>29 Tân Lập/ Tân Thành/ Bù Đốp/ Bình Phước</Text>
                     </View>
 
                     <View style={{marginTop: 25}}>

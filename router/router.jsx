@@ -22,8 +22,8 @@ const Router = (props) => {
 
     return (
         <React.Fragment>
-            <Stack.Navigator>
-                <Stack.Screen
+            <Stack.Navigator initialRouteName='dashboard'>
+                {/* <Stack.Screen
                     options={{headerShown: false}}
                     name="signin"
                     component={ScreenSignin} />
@@ -31,7 +31,7 @@ const Router = (props) => {
                 <Stack.Screen
                     options={{headerShown: false}}
                     name='signup'
-                    component={ScreenSignup} />
+                    component={ScreenSignup} /> */}
 
                 <Stack.Screen
                     options={{headerShown: false}}
