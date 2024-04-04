@@ -26,7 +26,7 @@ const CommonHeader = (props) => {
                 </TouchableOpacity>
             )}
 
-            <View>
+            <View style={[styles.boxUser]}>
                 {auth.email && (<Text>{auth.email}</Text>)}
                 <TouchableOpacity
                     style={[styles.headerUserBtn]}

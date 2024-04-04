@@ -17,7 +17,8 @@ const environment = {
             },
             product: {
                 common: {
-                    root: 'common/product'
+                    root: 'common/product',
+                    all: 'common/product/all',
                 }
             }
         }
@@ -40,7 +41,8 @@ const environment = {
             },
             product: {
                 common: {
-                    root: 'common/product'
+                    root: 'common/product',
+                    all: 'common/product/all',
                 }
             }
         }
