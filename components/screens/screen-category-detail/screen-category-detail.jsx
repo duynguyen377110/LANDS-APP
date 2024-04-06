@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, View } from "react-native";
+import { useDispatch } from "react-redux";
+
+import { toggle } from "../../../store/store-load-banner";
 import environment from "../../../environment";
 
 import CommonHeader from "../../common/common-header/common-header";
@@ -11,12 +14,14 @@ import styles from "./screen-category-detail-style";
 const url = `${environment.api.url}${environment.api.category.common.root}`;
 
 const ScreenCategoryDetail = (props) => {
+    const dispatch = useDispatch()
     const [category, setCategory] = useState(null);
 
     useEffect(() => {
         let { id } = props.route.params;
 
         const calllApi = async () => {
+            dispatch(toggle());
             let urlCategoryDetail = `${url}/${id}`;
 
             try {
@@ -38,6 +43,7 @@ const ScreenCategoryDetail = (props) => {
                 console.log(err);
 
             }
+            dispatch(toggle())
         }
 
         calllApi();

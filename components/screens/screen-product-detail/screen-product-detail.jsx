@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
 import { ScrollView, View, Text, Image } from "react-native";
+import { useDispatch } from 'react-redux';
+
+import { toggle } from "../../../store/store-load-banner";
+import environment from '../../../environment';
+
 import CommonHeader from "../../common/common-header/common-header";
 import { commonStyles } from "../../../styles";
+
 import styles from "./screen-product-detail-style";
-import environment from '../../../environment';
 
 let url = `${environment.api.url}${environment.api.product.common.root}`;
 
 const ScreenProductDetail = (props) => {
+    const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
         let { id } = props.route.params;
 
         const calllApi = async () => {
-            let urlCategoryDetail = `${url}/${id}`;
-
+            dispatch(toggle());
             try {
                 let res = await fetch(`${url}/${id}`, {
                     method: 'GET',
@@ -35,6 +40,7 @@ const ScreenProductDetail = (props) => {
                 console.log(err);
 
             }
+            dispatch(toggle());
         }
 
         calllApi();
