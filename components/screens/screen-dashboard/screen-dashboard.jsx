@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { View, ScrollView, Text } from "react-native";
+import { View, ScrollView } from "react-native";
+import { useDispatch } from "react-redux";
+
+import { toggle } from "../../../store/store-load-banner";
 
 import environment from "../../../environment";
 import CommonHeader from "../../common/common-header/common-header";
@@ -7,6 +10,7 @@ import CommonBanner from "../../common/common-banner/common-banner";
 import CommonProductCard from "../../common/common-product-card/common-product-card";
 import CommonListScrollHorizontal from "../../common/common-list/common-list-scroll-horizontal/common-list-scroll-horizontal";
 import CommonBlank from "../../common/common-blank/common-blank";
+
 import { commonStyles } from "../../../styles";
 import styles from "./screen-dashboard-style";
 
@@ -15,7 +19,7 @@ const url = `${environment.api.url}${environment.api.category.common.all}`;
 const urlProducts = `${environment.api.url}${environment.api.product.common.all}`;
 
 const ScreenDashboard = (props) => {
-    
+    const dispath = useDispatch();
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
 
@@ -44,6 +48,7 @@ const ScreenDashboard = (props) => {
     }
 
     const getProducts = () => {
+        dispath(toggle())
         return new Promise(async(resolve, reject) => {
             try {
                 let res = await fetch(urlProducts, {
@@ -64,6 +69,7 @@ const ScreenDashboard = (props) => {
             } catch (error) {
                 reject(error);
             }
+            dispath(toggle())
         })
     }
 

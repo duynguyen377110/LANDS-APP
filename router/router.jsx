@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { ActivityIndicator } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSelector } from 'react-redux';
@@ -12,8 +12,11 @@ import ScreenInformation from "../components/screens/screen-information/screen-i
 import ScreenCategoryDetail from "../components/screens/screen-category-detail/screen-category-detail";
 import ScreenProductDetail from "../components/screens/screen-product-detail/screen-product-detail";
 
+
 import CommonMessage from "../components/common/common-message/common-message";
+import CommonLoaderBanner from "../components/common/common-loader-banner/common-loader-banner";
 import { commonStyles } from '../styles';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +69,7 @@ const Router = (props) => {
             ]}/>
 
             <CommonMessage />
+            <CommonLoaderBanner />
         </React.Fragment>
     )
 }
