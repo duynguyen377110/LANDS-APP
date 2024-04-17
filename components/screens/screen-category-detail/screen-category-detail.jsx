@@ -22,10 +22,9 @@ const ScreenCategoryDetail = (props) => {
 
         const calllApi = async () => {
             dispatch(toggle());
-            let urlCategoryDetail = `${url}/${id}`;
-
+            
             try {
-                let res = await fetch(urlCategoryDetail, {
+                let res = await fetch(`${url}/${id}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -34,8 +33,9 @@ const ScreenCategoryDetail = (props) => {
 
                 if(!res.ok) throw new Error('Call api unsuccess');
 
-                let { status, category} = await res.json();
+                let { status, metadata} = await res.json();
                 if(status) {
+                    let { category } = metadata;
                     setCategory(category);
                 }
 

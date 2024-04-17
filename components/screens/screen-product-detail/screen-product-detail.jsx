@@ -6,6 +6,7 @@ import { toggle } from "../../../store/store-load-banner";
 import environment from '../../../environment';
 
 import CommonHeader from "../../common/common-header/common-header";
+import CommonListScrollThumbsHorizontal from "../../common/common-list/common-list-scroll-thumbs-horizontal/common-list-scroll-thumbs-horizontal";
 import { commonStyles } from "../../../styles";
 
 import styles from "./screen-product-detail-style";
@@ -15,6 +16,7 @@ let url = `${environment.api.url}${environment.api.product.common.root}`;
 const ScreenProductDetail = (props) => {
     const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
+    const [thumb, setThumb] = useState('');
 
     useEffect(() => {
         let { id } = props.route.params;
@@ -31,9 +33,11 @@ const ScreenProductDetail = (props) => {
 
                 if(!res.ok) throw new Error('Call api unsuccess');
 
-                let { status, product} = await res.json();
+                let { status, metadata} = await res.json();
                 if(status) {
+                    let { product } = metadata;
                     setProduct(product);
+                    setThumb(product.thumbs[0]);
                 }
 
             } catch (err) {
@@ -42,9 +46,13 @@ const ScreenProductDetail = (props) => {
             }
             dispatch(toggle());
         }
-
         calllApi();
+
     }, [])
+
+    const onChangeThumb = (event) => {
+        setThumb(event);
+    }
 
     return (
         <ScrollView style={{backgroundColor: '#ffffff'}}>
@@ -54,17 +62,13 @@ const ScreenProductDetail = (props) => {
 
             {product !== null && (
                 <View style={[commonStyles.component.wrapperComponent]}>
-                    <Image style={[styles.productBanner]} source={{uri: product.thumbs[0]}} />
+                    <Image style={[styles.productBanner]} source={{uri: thumb}} />
                     <Text style={styles.productOwner}>{product.productOwner}</Text>
 
                     <Text style={[styles.titleProduct]}>Ảnh sản phẩm:</Text>
-                    <View style={[styles.productThumbs]}>
-                        {product.thumbs.length > 0 && product.thumbs.map((thumb, index) => {
-                            return (
-                                <Image key={index} style={[styles.productThumbsContent]} source={{uri: thumb}} />
-                            )
-                        })}
-                    </View>
+                    <CommonListScrollThumbsHorizontal
+                        click={onChangeThumb}
+                        thumbs={product.thumbs}/>
 
                     <Text style={[styles.titleProduct]}>Thông tin sản phẩm:</Text>
                     <View style={[styles.productInfor]}>
@@ -91,7 +95,7 @@ const ScreenProductDetail = (props) => {
                         <View style={[styles.productInforRow, {borderBottomWidth: 0}]}>
                             <Text style={[styles.productInforTitle]}>Giá đề xuất</Text>
                             <Text style={[styles.productInforContent]}>{
-                                product.price.$numberDecimal.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+                                product.price.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
                             } VND</Text>
                         </View>
                     </View>

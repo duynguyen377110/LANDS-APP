@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 15,
         paddingBottom: 10,
-        paddingTop: 10,
+        paddingTop: 35,
         paddingHorizontal: 15,
     },
     boxUser: {
