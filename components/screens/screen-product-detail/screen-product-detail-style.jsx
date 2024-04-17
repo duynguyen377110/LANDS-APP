@@ -53,20 +53,20 @@ const styles = StyleSheet.create({
         verticalAlign: 'middle',
     },
     // VIEW IMAGE
-    productThumbs: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        rowGap: 20,
-        columnGap: 10,
-        // height: 50,
-        overflow: 'scroll',
-        paddingBottom: 15,
-    },
-    productThumbsContent: {
-        height: 100,
-        width: '30%'
-    }
+    // productThumbs: {
+    //     flexDirection: 'row',
+    //     flexWrap: 'wrap',
+    //     justifyContent: 'space-between',
+    //     rowGap: 20,
+    //     columnGap: 10,
+    //     // height: 50,
+    //     overflow: 'scroll',
+    //     paddingBottom: 15,
+    // },
+    // productThumbsContent: {
+    //     height: 100,
+    //     width: '30%'
+    // }
 })
 
 export default styles;

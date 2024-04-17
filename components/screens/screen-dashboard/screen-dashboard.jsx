@@ -35,14 +35,15 @@ const ScreenDashboard = (props) => {
 
                 if(!res.ok) throw new Error('Call api unsuccess');
 
-                let { status, categories} = await res.json();
+                let { status, metadata} = await res.json();
 
                 if(status) {
+                    let { categories } = metadata;
                     resolve(categories);
                 }
 
             } catch (error) {
-                reject(error);
+                reject({status: false});
             }
         })
     }
@@ -60,14 +61,15 @@ const ScreenDashboard = (props) => {
 
                 if(!res.ok) throw new Error('Call api unsuccess');
 
-                let { status, products} = await res.json();
+                let { status, metadata} = await res.json();
                 
                 if(status) {
+                    let { products } = metadata;
                     resolve(products);
                 }
 
             } catch (error) {
-                reject(error);
+                reject({status: false});
             }
             dispath(toggle())
         })
@@ -75,7 +77,7 @@ const ScreenDashboard = (props) => {
 
     useEffect(() => {
         const calllApi = async () => {
-            let [products, categories] = await Promise.allSettled([getProducts(), getCategories()]);
+            let [categories, products] = await Promise.allSettled([getCategories(), getProducts()]);
 
             setCategories(categories.value);
             setProducts(products.value);
